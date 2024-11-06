@@ -11,9 +11,10 @@ public class ChildExmaple extends AbstractSample
 		System.out.println("child method");
 	}
 	public static void main(String[] args) {
-		ChildExmaple ob = new ChildExmaple();
+		AbstractSample ob = new ChildExmaple();//reference is parent class so only parent class properties take object (ob)
 		ob.abstractname();
 		ob.display();
+		//ob.show();//childexample class (child class properties/data not taken)
 
 	}
 

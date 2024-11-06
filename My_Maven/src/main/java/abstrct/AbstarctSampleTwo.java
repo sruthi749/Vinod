@@ -1,12 +1,9 @@
 package abstrct;
 
-public class AbstarctSampleTwo {
-		public abstract void abstractname();//provide semicolon
-		
-		public void display()//add another method instance
-		{
-			System.out.println("Instance method");
-		}
+public abstract class AbstarctSampleTwo 
+	{
+		public abstract void abname();//provide semicolon
+	}
 
 
-}
+
