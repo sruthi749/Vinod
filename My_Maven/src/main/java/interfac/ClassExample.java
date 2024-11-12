@@ -8,8 +8,8 @@ public class ClassExample implements InterfaceExample{
 	 public static void main(String[] args) 
 	 {
 		 System.out.println(InterfaceExample.a);
-		 //ClassExample ob = new ClassExample();
-		 InterfaceExample ob = new ClassExample();
+		 ClassExample ob = new ClassExample();
+		 //InterfaceExample ob = new ClassExample();
 		 ob.example();
 		 ob.exam();
 	 }
