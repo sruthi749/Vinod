@@ -1,4 +1,4 @@
-package interfac;
+/*package interfac;
 
 public class ClassExample implements InterfaceExample{
 	 public void example()
@@ -21,3 +21,4 @@ public class ClassExample implements InterfaceExample{
 	}
 
 }
+*/

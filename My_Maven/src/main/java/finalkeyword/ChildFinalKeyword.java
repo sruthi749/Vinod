@@ -1,6 +1,6 @@
-package finalkeyword;
+/*package finalkeyword;
 
-public class ChildFinalKeyword extends FinalKeywordSample{//cannot inherit because using final keyword{
+//public class ChildFinalKeyword extends FinalKeywordSample{//cannot inherit because using final keyword{
 	public void show()//cant override final keyword method
 	{
 		
@@ -12,3 +12,4 @@ public class ChildFinalKeyword extends FinalKeywordSample{//cannot inherit becau
 	}
 
 }
+*/

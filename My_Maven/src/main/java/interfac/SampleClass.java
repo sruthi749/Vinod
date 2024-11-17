@@ -1,4 +1,4 @@
-package interfac;
+/*package interfac;
 
 public class SampleClass implements TestInterface {
 
@@ -27,4 +27,4 @@ public class SampleClass implements TestInterface {
 		
 	}
 
-}
+}*/
