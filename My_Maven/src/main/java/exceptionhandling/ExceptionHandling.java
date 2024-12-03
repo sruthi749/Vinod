@@ -19,7 +19,7 @@ public class ExceptionHandling {
 		}*/
 		finally
 		{
-		System.out.println("Statement after handling exception"); //most important
+		System.out.println("Statement after handling exception"); //most important code
 		//output comes under ArithmeticException (unchecked)
 		}
 	}

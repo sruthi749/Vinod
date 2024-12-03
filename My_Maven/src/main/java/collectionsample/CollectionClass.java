@@ -1,6 +1,7 @@
 package collectionsample;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class CollectionClass {
 
@@ -14,7 +15,7 @@ public class CollectionClass {
 		ob.add('a');
 		System.out.println(ob);
 		
-		ArrayList<String> b = new ArrayList<String>();
+		/*ArrayList<String> b = new ArrayList<String>();
 		b.add("New");
 		b.add("program");
 		//b.add(50);
@@ -44,6 +45,15 @@ public class CollectionClass {
 		
 		//isEmpty
 		System.out.println(c.isEmpty());//empty value
+		*/
+		//Iterator - its a interface we can print elements one by one
+		Iterator it = ob.iterator();//iterator() its a method
+		while(it.hasNext())//hasNext - its a boolean true/false - there is element/not
+		{
+			System.out.println(it.next());//Returns the next element in the iteration
+		}
+		it.remove();//remove last index/element
+		System.out.println(ob);
 	}
 
 }

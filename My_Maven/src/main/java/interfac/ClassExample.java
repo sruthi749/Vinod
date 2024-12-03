@@ -1,4 +1,4 @@
-/*package interfac;
+package interfac;
 
 public class ClassExample implements InterfaceExample{
 	 public void example()
@@ -11,14 +11,13 @@ public class ClassExample implements InterfaceExample{
 		 ClassExample ob = new ClassExample();
 		 //InterfaceExample ob = new ClassExample();
 		 ob.example();
-		 ob.exam();
+		// ob.exam();
 	 }
-	@Override
+	 /*@Override
 	public void exam() 
 	{
 		 System.out.println("New Interface Method");
 		
-	}
+	}*/
 
 }
-*/

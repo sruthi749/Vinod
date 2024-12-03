@@ -15,6 +15,10 @@ public class ChildExmaple extends AbstractSample
 		ob.abstractname();
 		ob.display();
 		//ob.show();//childexample class (child class properties/data not taken)
+		ChildExmaple ob1 =new ChildExmaple();
+		ob1.abstractname();
+		ob1.display();
+		ob1.show();
 
 	}
 

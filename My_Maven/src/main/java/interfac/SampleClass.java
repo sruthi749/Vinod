@@ -1,4 +1,4 @@
-/*package interfac;
+package interfac;
 
 public class SampleClass implements TestInterface {
 
@@ -21,10 +21,10 @@ public class SampleClass implements TestInterface {
 		ob.display();
 		ob.show();
 		TestInterface obj =new SampleClass();
-		obj.print();
+		//obj.print();//child class method name
 		obj.display();
 		obj.show();
 		
 	}
 
-}*/
+}

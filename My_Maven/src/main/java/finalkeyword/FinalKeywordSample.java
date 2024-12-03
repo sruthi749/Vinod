@@ -12,3 +12,5 @@ public final class FinalKeywordSample {
 	 System.out.println("Final method");
  }
 }
+//method is final cant override
+//class is final cant inherit
