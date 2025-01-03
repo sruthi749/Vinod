@@ -13,10 +13,10 @@ public class DragAndDrop {
 		driver.get("https://selenium.qabible.in/drag-drop.php");
 		driver.manage().window().maximize(); 
 		
-		WebElement source = driver.findElement(By.xpath("//span[text()='Draggable n°1']"));//source drag from starting point and ending point drop to target
-		WebElement target = driver.findElement(By.id("mydropzone"));//classname.methodname();-->By.id,By.xpath etc -- static method
+		WebElement source = driver.findElement(By.xpath("//span[text()='Draggable n°1']"));//source drag from
+		WebElement target = driver.findElement(By.id("mydropzone"));
 		Actions	draganddrop = new Actions(driver);
-		draganddrop.dragAndDrop(source, target).perform();//classname.methodname();-->draganddrop.dragAndDrop(source, target)static method
+		draganddrop.dragAndDrop(source, target).perform();
 		}
 
 }
