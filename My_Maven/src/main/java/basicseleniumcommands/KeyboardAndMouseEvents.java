@@ -16,15 +16,17 @@ public class KeyboardAndMouseEvents {
 		
 		//Action - class usedto handle keyboard and mouse,need to create an object action class,along with action class we should parmeterise
 		//To automate double click button
-		Actions keyboard = new Actions(driver);//we use driver
+		//Mouse actions
+		Actions mouse = new Actions(driver);//we use driver
 		WebElement doubleclick = driver.findElement(By.id("doubleClickBtn"));
-		keyboard.doubleClick(doubleclick).perform();//method overriding same method name different parameter
+		mouse.doubleClick(doubleclick).perform();//method overloading same methodname different parameter
 		WebElement rightclick = driver.findElement(By.id("rightClickBtn"));
-		keyboard.contextClick(rightclick).perform();//right click
-		keyboard.moveToElement(rightclick).perform();//mouse over
+		mouse.contextClick(rightclick).perform();//right click//perform used to a convenience method for performing the actions without calling build() first.
+		mouse.moveToElement(rightclick).perform();//mouse over
 		
-		//keyboard actions
-		keyboard.sendKeys(Keys.ARROW_DOWN).perform();	
+		//Keyboard actions
+		mouse.sendKeys(Keys.ARROW_DOWN).perform();	
+		mouse.sendKeys(Keys.F5).perform();
 	
 		}
 
