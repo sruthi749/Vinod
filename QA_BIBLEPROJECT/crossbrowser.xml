@@ -1,0 +1,24 @@
+<suite name="My Suite" parallel="tests" thread-count="2">
+	<test name="Test">
+	<parameter name="browser" value="Chrome"></parameter>
+		<groups>
+			<run>
+				<include name="Critical" />
+			</run>
+		</groups>
+		<classes>
+			<class name="testCases.LoginTestCases"></class>
+		</classes>
+	</test>
+	<test name="Test1">
+	<parameter name="browser" value="Edge"></parameter>
+		<groups>
+			<run>
+				<include name="Low" />
+			</run>
+		</groups>
+		<classes>
+			<class name="testCases.LoginTestCases"></class>
+		</classes>
+	</test>
+</suite>
