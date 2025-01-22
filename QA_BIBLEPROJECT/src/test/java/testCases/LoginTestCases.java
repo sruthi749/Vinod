@@ -24,7 +24,6 @@ public class LoginTestCases extends BaseClass {
 		// DashboardPage dp = lp.performLogin("Carol", "1q2w3e4r");
 		String actualResult = dp.getTextOfWelcomeText();
 		String expectedResult = "Welcome to Payroll Application";
-
 		Assert.assertEquals(actualResult, expectedResult, "Login Page not working as expected");
 	}
 

@@ -17,7 +17,7 @@ public class ExcelReadUtility {
 	@DataProvider(name = "logindataprovider")
 	public static Object[][] readExcelData() throws IOException {
 
-		filepath = new FileInputStream(System.getProperty("user.dir") + "//src//main//resources//excelread.xlsx");
+		filepath = new FileInputStream(System.getProperty("user.dir") + "//src//main//resources//Book1.xlsx");
 		workBook = new XSSFWorkbook(filepath); // method to fetch workbook from file
 		sheet = workBook.getSheet("Sheet1"); // method to get sheet from workbook
 		XSSFRow row = sheet.getRow(0);
