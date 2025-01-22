@@ -67,7 +67,7 @@ public class LoginPage {
 	{
 		inputUserName(uname);
 		inputPassword(password);
-		wait.presenceOfElementLocate(driver, "//button[@class='btn btn-default']");
+		wait.presenceOfElementLocator(driver, "//button[@class='btn btn-default']");
 		clickLoginButton();
 		return new DashboardPage(driver);
 	}
