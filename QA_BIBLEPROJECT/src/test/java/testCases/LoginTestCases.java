@@ -10,9 +10,9 @@ import utilities.ExcelReadUtility;
 
 public class LoginTestCases extends BaseClass {
 	// Verify login page is working
-	@Test(retryAnalyzer = retryPackage.RetryTestCases.class, groups = "Critical")
-	// public void verifyLoginPageWorking(String username,String password) {
-	public void verifyLoginPageWorking() {
+	@Test(groups = "Critical", dataProvider = "logindataprovider", dataProviderClass = ExcelReadUtility.class)
+	public void verifyLoginPageWorking(String username, String password) {
+		// public void verifyLoginPageWorking() {
 		LoginPage lp = new LoginPage(driver);
 //		lp.inputUserName("Carol");
 //		lp.inputPassword("1q2w3e4r");
@@ -20,8 +20,8 @@ public class LoginTestCases extends BaseClass {
 		// lp.performLogin("Carol", "1q2w3e4r");
 
 		// DashboardPage dp = new DashboardPage(driver);
-		// DashboardPage dp = lp.performLogin(username,password);
-		DashboardPage dp = lp.performLogin("Carol", "1q2w3e4r");
+		DashboardPage dp = lp.performLogin(username, password);
+		// DashboardPage dp = lp.performLogin("Carol", "1q2w3e4r");
 		String actualResult = dp.getTextOfWelcomeText();
 		String expectedResult = "Welcome to Payroll Application";
 
