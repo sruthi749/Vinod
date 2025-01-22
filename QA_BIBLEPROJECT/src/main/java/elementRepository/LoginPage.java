@@ -12,10 +12,10 @@ import utilities.WaitUtility;
 public class LoginPage {
 
 	WebDriver driver;
-	GeneralUtilities utilities=new GeneralUtilities();
-	
-	WaitUtility wait = new WaitUtility(); 
-	
+	GeneralUtilities utilities = new GeneralUtilities();
+
+	WaitUtility wait = new WaitUtility();
+
 	public LoginPage(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
@@ -29,7 +29,7 @@ public class LoginPage {
 
 	@FindBy(xpath = "//button[@class='btn btn-default']")
 	WebElement loginButton;
-	
+
 	@FindBy(xpath = "//a[text()='reset it']")
 	WebElement resetItLink;
 
@@ -46,9 +46,9 @@ public class LoginPage {
 
 	public void clickLoginButton() {
 		utilities.clickOnElement(loginButton);
-		
+
 	}
-	
+
 	public void navigateToResetItLink() {
 		utilities.clickOnElement(resetItLink);
 	}
@@ -62,9 +62,8 @@ public class LoginPage {
 		String sendButtonFontType = sendButton.getCssValue("font-family");
 		return sendButtonFontType;
 	}
-	
-	public DashboardPage performLogin(String uname,String password)
-	{
+
+	public DashboardPage performLogin(String uname, String password) {
 		inputUserName(uname);
 		inputPassword(password);
 		wait.presenceOfElementLocator(driver, "//button[@class='btn btn-default']");

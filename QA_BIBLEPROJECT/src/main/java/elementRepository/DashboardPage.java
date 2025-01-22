@@ -10,7 +10,7 @@ import utilities.GeneralUtilities;
 public class DashboardPage {
 
 	WebDriver driver;
-	GeneralUtilities utilities=new GeneralUtilities();
+	GeneralUtilities utilities = new GeneralUtilities();
 
 	public DashboardPage(WebDriver driver) {
 		this.driver = driver;
@@ -19,25 +19,25 @@ public class DashboardPage {
 
 	@FindBy(xpath = "//p[text()='Welcome to Payroll Application']")
 	WebElement welcomeText;
-	
-	@FindBy(xpath="//a[text()='Clients']")
+
+	@FindBy(xpath = "//a[text()='Clients']")
 	WebElement clientMenu;
-	
+
 	@FindBy(xpath = "//a[text()='Workers']")
 	WebElement workersMenu;
 
 	public String getTextOfWelcomeText() {
 		return utilities.getElementText(welcomeText);
 	}
-	
+
 	public ClientPage navigateToClientMenu() {
 		utilities.clickOnElement(clientMenu);
-		return  new ClientPage(driver);
+		return new ClientPage(driver);
 	}
-	
+
 	public WorkerPage navigateToWorkersMenu() {
 		utilities.clickOnElement(workersMenu);
 		return new WorkerPage(driver);
 	}
-	
+
 }

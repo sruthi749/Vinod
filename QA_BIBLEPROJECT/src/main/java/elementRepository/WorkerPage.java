@@ -8,10 +8,10 @@ import org.openqa.selenium.support.PageFactory;
 import utilities.GeneralUtilities;
 
 public class WorkerPage {
-	
+
 	WebDriver driver;
-	GeneralUtilities utilities=new GeneralUtilities();
-	
+	GeneralUtilities utilities = new GeneralUtilities();
+
 	@FindBy(xpath = "//a[text()='Create Worker']")
 	WebElement createWorkerMenu;
 
@@ -24,13 +24,11 @@ public class WorkerPage {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
-	
-	
 
 	public String getSelectedValueOfTitleDropdownInCreateWorkerMenu() {
 		utilities.clickOnElement(createWorkerMenu);
 		return utilities.getDropdownSelectedValue(titleDropdown, 2);
-		
+
 	}
 
 }

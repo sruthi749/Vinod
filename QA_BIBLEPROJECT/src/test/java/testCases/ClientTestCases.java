@@ -73,12 +73,12 @@ public class ClientTestCases extends BaseClass {
 	@Test
 	public void verifyToolTipValueOfEditIconInTableOfClientMenu() {
 		LoginPage lp = new LoginPage(driver);
-		//lp.performLogin("Carol", "1q2w3e4r");
-		//DashboardPage dp = new DashboardPage(driver);
+		// lp.performLogin("Carol", "1q2w3e4r");
+		// DashboardPage dp = new DashboardPage(driver);
 		DashboardPage dp = lp.performLogin("Carol", "1q2w3e4r");
-		//dp.navigateToClientMenu();
+		// dp.navigateToClientMenu();
 		ClientPage cp = dp.navigateToClientMenu();
-		//ClientPage cp = new ClientPage(driver);
+		// ClientPage cp = new ClientPage(driver);
 		String actualResult = cp.getTooltipValueOfUpdateIcon();
 		String expectedResult = "Update";
 
@@ -91,13 +91,13 @@ public class ClientTestCases extends BaseClass {
 	@Test
 	public void verifySelectedValueInCheckBoxofCreateClientInClientMenu() {
 		LoginPage lp = new LoginPage(driver);
-		//lp.performLogin("Carol", "1q2w3e4r");
+		// lp.performLogin("Carol", "1q2w3e4r");
 
-		//DashboardPage dp = new DashboardPage(driver);
-		DashboardPage dp =lp.performLogin("Carol", "1q2w3e4r");
-		//dp.navigateToClientMenu();
+		// DashboardPage dp = new DashboardPage(driver);
+		DashboardPage dp = lp.performLogin("Carol", "1q2w3e4r");
+		// dp.navigateToClientMenu();
 
-		//ClientPage cp = new ClientPage(driver);
+		// ClientPage cp = new ClientPage(driver);
 		ClientPage cp = dp.navigateToClientMenu();
 		boolean actualResult = cp.isCheckBoxSelectedInCreateClientMenu();
 		boolean expectedResult = true;

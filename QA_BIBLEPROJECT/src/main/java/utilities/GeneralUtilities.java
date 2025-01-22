@@ -61,37 +61,33 @@ public class GeneralUtilities {
 		String text = element.getText();
 		return text;
 	}
-	
-	public String getToolTipValue(WebElement element)
-	{
-		String tooltipValue=element.getDomAttribute("title");
+
+	public String getToolTipValue(WebElement element) {
+		String tooltipValue = element.getDomAttribute("title");
 		return tooltipValue;
 	}
-	
-	public String getDropdownSelectedValue(WebElement element,int valueToSelect)
-	{
-		Select select=new Select(element);
+
+	public String getDropdownSelectedValue(WebElement element, int valueToSelect) {
+		Select select = new Select(element);
 		select.selectByIndex(valueToSelect);
-		
+
 		WebElement selectedDropdownValue = select.getFirstSelectedOption();
 		String dropdownText = selectedDropdownValue.getText();
 		return dropdownText;
-		
+
 	}
-	
+
 	public boolean isCheckboxSelected(WebElement element) {
 		element.click();
-		boolean checkboxSelection=element.isSelected();
+		boolean checkboxSelection = element.isSelected();
 		return checkboxSelection;
 	}
-	
-	public void clickOnElement(WebElement element)
-	{
+
+	public void clickOnElement(WebElement element) {
 		element.click();
 	}
-	
-	public void scrollThePage(WebDriver driver)
-	{
+
+	public void scrollThePage(WebDriver driver) {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollBy(0,2500)", "");
 	}
