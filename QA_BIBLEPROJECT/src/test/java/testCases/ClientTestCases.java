@@ -104,4 +104,5 @@ public class ClientTestCases extends BaseClass {
 
 		Assert.assertEquals(actualResult, expectedResult, "Checkbox is not working as expected");
 	}
+	
 }

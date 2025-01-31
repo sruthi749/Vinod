@@ -26,6 +26,17 @@ public class ClientPage {
 	@FindBy(id = "client-require_po")
 	WebElement createClientCheckBox;
 
+	@FindBy(id ="clientsearch-client_name")
+	WebElement clientName;
+	
+	@FindBy(id = "clientsearch-id")
+	WebElement clientId;
+	
+	@FindBy(className = "btn btn-default")
+	WebElement resetClient;
+	
+	@FindBy(xpath = "//table[@class='table table-striped table-bordered']//thead//tr//th[2]//a")
+	WebElement clientNameHeading;
 	public String getTooltipValueOfUpdateIcon() {
 		return utilities.getToolTipValue(updateIconToolTip);
 	}
@@ -34,6 +45,12 @@ public class ClientPage {
 		utilities.clickOnElement(createClientMenu);
 		utilities.scrollThePage(driver);
 		return utilities.isCheckboxSelected(createClientCheckBox);
+	}
+	
+	public void resetTheClientDetails() {
+		clientName.sendKeys("Sam");
+		clientId.sendKeys("3");
+		utilities.clickOnElement(resetClient);
 	}
 
 }

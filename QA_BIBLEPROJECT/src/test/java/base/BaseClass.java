@@ -69,6 +69,7 @@ import java.util.Properties;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -94,11 +95,11 @@ public class BaseClass {
 	public void beforeMethod(String browser) throws IOException {
 		if (browser.equals("Chrome")) {
 			driver = new ChromeDriver();
-		} else if (browser.equals("Edge")) {
-			driver = new EdgeDriver();
+		} else if (browser.equals("Fire")) {
+			driver = new FirefoxDriver();
 		}
-		testBasic();
 		driver = new ChromeDriver();
+		testBasic();
 		// driver.get("https://www.qabible.in/payrollapp/site/login");
 		driver.get(prop.getProperty("baseurl"));// hard code data u can fetch url using properties
 		driver.manage().timeouts().implicitlyWait(Duration.ofMillis(10000));
