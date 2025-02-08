@@ -6,8 +6,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import utilities.GeneralUtilities;
-import utilities.WaitUtility;
+import utilitiesPackages.GeneralUtilities;
+import utilitiesPackages.WaitUtility;
 
 public class LoginPage {
 

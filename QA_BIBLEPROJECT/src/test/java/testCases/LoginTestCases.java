@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 import base.BaseClass;
 import elementRepository.DashboardPage;
 import elementRepository.LoginPage;
-import utilities.ExcelReadUtility;
+import utilitiesPackages.ExcelReadUtility;
 
 public class LoginTestCases extends BaseClass {
 	// Verify login page is working
@@ -29,7 +29,7 @@ public class LoginTestCases extends BaseClass {
 
 	// Open the application --> Click "Reset It" hyper link --> Verify the text of
 	// "Send" button.
-	@Test(retryAnalyzer = retryPackage.RetryTestCases.class, groups = "Low")
+	@Test(retryAnalyzer = retryAnalyzerPackages.RetryTestCases.class, groups = "Low")
 	public void verifyTheTextOfResetLinkSendButton() {
 		LoginPage lp = new LoginPage(driver);
 		lp.navigateToResetItLink();

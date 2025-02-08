@@ -4,6 +4,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import base.BaseClass;
+import constantPackages.Constant;
 import elementRepository.DashboardPage;
 import elementRepository.LoginPage;
 import elementRepository.WorkerPage;
@@ -29,5 +30,15 @@ public class WorkersTestCases extends BaseClass {
 
 		Assert.assertEquals(actualResult, expectedResult,
 				"Title Dropdown of Create Worker Menu is not working as expected");
+	}
+	
+	@Test
+	public void verifyTheWorkerDeatailsUsingSearchButton() {
+		LoginPage lp = new LoginPage(driver);
+		DashboardPage dp = lp.performLogin("Carol", "1q2w3e4r");
+		WorkerPage wp = dp.navigateToWorkersMenu();
+		boolean actualResult = wp.clickOnWorkerSearchButton(2, "Jose");
+		boolean expectedResult = true;
+		Assert.assertEquals(actualResult, expectedResult,Constant.errorMessagesForClientTestCase);
 	}
 }

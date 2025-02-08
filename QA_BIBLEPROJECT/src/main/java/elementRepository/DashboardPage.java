@@ -5,7 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import utilities.GeneralUtilities;
+import utilitiesPackages.GeneralUtilities;
 
 public class DashboardPage {
 
@@ -26,6 +26,7 @@ public class DashboardPage {
 	@FindBy(xpath = "//a[text()='Workers']")
 	WebElement workersMenu;
 
+	
 	public String getTextOfWelcomeText() {
 		return utilities.getElementText(welcomeText);
 	}

@@ -3,14 +3,19 @@ package elementRepository;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.FindBys;
 import org.openqa.selenium.support.PageFactory;
 
-import utilities.GeneralUtilities;
+import utilitiesPackages.GeneralUtilities;
+import utilitiesPackages.WaitUtility;
 
 public class ClientPage {
 
 	WebDriver driver;
 	GeneralUtilities utilities = new GeneralUtilities();
+	
+	WaitUtility wait = new WaitUtility();
+
 
 	public ClientPage(WebDriver driver) {
 		this.driver = driver;
@@ -32,11 +37,12 @@ public class ClientPage {
 	@FindBy(id = "clientsearch-id")
 	WebElement clientId;
 	
-	@FindBy(className = "btn btn-default")
-	WebElement resetClient;
+	@FindBy(xpath = "//button[text()='Search']")
+	WebElement searchButton;
 	
-	@FindBy(xpath = "//table[@class='table table-striped table-bordered']//thead//tr//th[2]//a")
-	WebElement clientNameHeading;
+	@FindBy(xpath="//table[@class='table table-striped table-bordered']//tbody//tr//td")
+	WebElement clientTtable;
+	
 	public String getTooltipValueOfUpdateIcon() {
 		return utilities.getToolTipValue(updateIconToolTip);
 	}
@@ -47,10 +53,16 @@ public class ClientPage {
 		return utilities.isCheckboxSelected(createClientCheckBox);
 	}
 	
-	public void resetTheClientDetails() {
-		clientName.sendKeys("Sam");
-		clientId.sendKeys("3");
-		utilities.clickOnElement(resetClient);
+	public boolean clickOnClientSearchButton(int col,String value) {
+		//wait.visibilityOfElement(driver, clientName);
+		utilities.getElementValue(clientName, value);
+		wait.elementToBeClickable(driver, searchButton);
+		utilities.clickOnElement(searchButton);
+		wait.visibilityOfElement(driver, clientTtable);
+		return utilities.getTableCellValue(clientTtable, col, value);
+		
 	}
+	
+	
 
 }

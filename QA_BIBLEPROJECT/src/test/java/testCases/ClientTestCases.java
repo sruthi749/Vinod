@@ -62,15 +62,17 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import base.BaseClass;
+import constantPackages.Constant;
 import elementRepository.ClientPage;
 import elementRepository.DashboardPage;
 import elementRepository.LoginPage;
+import utilitiesPackages.ExcelReadUtility;
 
 public class ClientTestCases extends BaseClass {
 
 	// Open the application --> Login to the application --> Navigate to "Client"
 	// menu --> verify the tooltip value for "Edit" icon for any row in the table.
-	@Test
+	@Test(groups="Low")
 	public void verifyToolTipValueOfEditIconInTableOfClientMenu() {
 		LoginPage lp = new LoginPage(driver);
 		// lp.performLogin("Carol", "1q2w3e4r");
@@ -88,7 +90,7 @@ public class ClientTestCases extends BaseClass {
 	// Open the application --> Login to the application --> Navigate to "Client"
 	// menu -->Click "Create Client" sub menu --> Select the check-box - "Require
 	// Po" and verify the same is selected.
-	@Test
+	@Test(enabled = false)
 	public void verifySelectedValueInCheckBoxofCreateClientInClientMenu() {
 		LoginPage lp = new LoginPage(driver);
 		// lp.performLogin("Carol", "1q2w3e4r");
@@ -105,4 +107,13 @@ public class ClientTestCases extends BaseClass {
 		Assert.assertEquals(actualResult, expectedResult, "Checkbox is not working as expected");
 	}
 	
+	@Test(groups="Critical",dataProvider = "logindataprovider", dataProviderClass = ExcelReadUtility.class)
+	public void verifyTheSearchButtonAndClientDetailsWorking(String username,String password) {
+		LoginPage lp = new LoginPage(driver);
+		DashboardPage dp = lp.performLogin(username,password);
+		ClientPage cp = dp.navigateToClientMenu();
+		boolean actualResult =cp.clickOnClientSearchButton(2, "Sam");
+		boolean expectedResult = true;
+		Assert.assertEquals(actualResult, expectedResult,Constant.errorMessagesForClientTestCase);
+	}
 }

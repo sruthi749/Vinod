@@ -75,7 +75,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
 
-import utilities.ScreenshotUtility;
+import utilitiesPackages.ScreenshotUtility;
 
 public class BaseClass {
 
@@ -93,13 +93,15 @@ public class BaseClass {
 	@BeforeMethod(alwaysRun = true)
 	@Parameters("browser")
 	public void beforeMethod(String browser) throws IOException {
+		// public void beforeMethod() {
+		testBasic();
 		if (browser.equals("Chrome")) {
 			driver = new ChromeDriver();
 		} else if (browser.equals("Fire")) {
 			driver = new FirefoxDriver();
 		}
-		driver = new ChromeDriver();
-		testBasic();
+		// driver = new ChromeDriver();
+
 		// driver.get("https://www.qabible.in/payrollapp/site/login");
 		driver.get(prop.getProperty("baseurl"));// hard code data u can fetch url using properties
 		driver.manage().timeouts().implicitlyWait(Duration.ofMillis(10000));

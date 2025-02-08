@@ -48,8 +48,11 @@
 //
 //
 //}
-package utilities;
+package utilitiesPackages;
 
+import java.util.List;
+
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -90,6 +93,29 @@ public class GeneralUtilities {
 	public void scrollThePage(WebDriver driver) {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollBy(0,2500)", "");
+	}
+
+	public void getElementValue(WebElement element, String value) {
+		element.sendKeys(value);
+	}
+
+	public boolean getTableCellValue(WebElement table, int col, String value) {
+		// List<WebElement> rows = table.findElements(By.xpath("//tbody//tr"));
+		// int rowSize = rows.size();
+		int rowSize = table.findElements(By.xpath("//tbody//tr")).size();
+		System.out.println("number of rows :" + rowSize);
+		boolean flag = false;
+		for (int i = 1; i < rowSize; i++) {
+			// List<WebElement> rows = table.findElements(By.xpath("//tbody//tr//td"));
+			// String name = table.getText();
+			String name = table.findElement(By.xpath("//tbody//tr[" + i + "]//td[" + col + "]")).getText();
+			if (name.equals(value)) {
+				flag = true;
+				System.out.println(name);
+				break;
+			}
+		}
+		return flag;
 	}
 
 }
