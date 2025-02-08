@@ -18,9 +18,9 @@ public class WaitUtility {
 		
 	}
 	
-	public void elementToBeClickable(WebDriver driver, WebElement locator) {
+	public void elementToBeClickable(WebDriver driver, WebElement element) {
 		WebDriverWait explicitwait = new WebDriverWait(driver, Duration.ofMillis(10000));
-		explicitwait.until(ExpectedConditions.elementToBeClickable(locator));
+		explicitwait.until(ExpectedConditions.elementToBeClickable(element));
 	}
 	
 	public void visibilityOfElement(WebDriver driver,WebElement element) {

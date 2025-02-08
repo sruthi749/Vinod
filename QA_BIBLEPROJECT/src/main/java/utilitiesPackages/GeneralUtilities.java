@@ -95,7 +95,7 @@ public class GeneralUtilities {
 		js.executeScript("window.scrollBy(0,2500)", "");
 	}
 
-	public void getElementValue(WebElement element, String value) {
+	public void getElementValue(WebElement element, String value) { //inputValueTextBox
 		element.sendKeys(value);
 	}
 

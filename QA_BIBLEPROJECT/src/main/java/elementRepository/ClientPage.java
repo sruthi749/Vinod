@@ -40,7 +40,7 @@ public class ClientPage {
 	@FindBy(xpath = "//button[text()='Search']")
 	WebElement searchButton;
 	
-	@FindBy(xpath="//table[@class='table table-striped table-bordered']//tbody//tr//td")
+	@FindBy(xpath="//table[@class='table table-striped table-bordered']")
 	WebElement clientTtable;
 	
 	public String getTooltipValueOfUpdateIcon() {
@@ -54,7 +54,6 @@ public class ClientPage {
 	}
 	
 	public boolean clickOnClientSearchButton(int col,String value) {
-		//wait.visibilityOfElement(driver, clientName);
 		utilities.getElementValue(clientName, value);
 		wait.elementToBeClickable(driver, searchButton);
 		utilities.clickOnElement(searchButton);
